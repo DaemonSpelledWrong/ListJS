@@ -1,11 +1,12 @@
 
 function arrayToList(input) {
-    var list = {};
+    var list = null;
 
-    for(var i = 0; i < input.length; i++) {
-
-    };
-
+    for(let i = input.length - 1; i >= 0; i--){
+        list = {value: input[i], rest: list};
+        
+    }
+    return list;
 };
 
 function listToArray(input) {
