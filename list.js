@@ -1,6 +1,6 @@
 
 function arrayToList(input) {
-    var list = null;
+    let list = null;
 
     for(let i = input.length - 1; i >= 0; i--){
         list = {value: input[i], rest: list};
@@ -9,8 +9,14 @@ function arrayToList(input) {
     return list;
 };
 
-function listToArray(input) {
+function listToArray(list) {
+    let array = [];
 
+    for(let node = list; node; node = node.rest) {
+        array.push(node.value);
+    };
+    return array;
 };
 
-console.log(arrayToList([1,2,3]));
+console.log(arrayToList([10, 20]));
+console.log(listToArray(arrayToList([10, 20, 30])));
