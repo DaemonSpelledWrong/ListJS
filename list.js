@@ -24,9 +24,20 @@ function prepend(element, list) {
     return newList;
 };
 
-function nth(list, number) {
-   
-    
+function nth(list, index) {
+    let result = [];
+    if(list == null || index < 0) {
+        return undefined;
+    };
+    if(index == 0) {
+        return list.value;
+    };
+    if(index > 0) {
+        for(node = list; node; node = node.rest) {
+            result.push(node.value);
+        };
+    };
+    return result[index];
 };
 
 console.log(arrayToList([10, 20])); // → {value: 10, rest: {value: 20, rest: null}}
